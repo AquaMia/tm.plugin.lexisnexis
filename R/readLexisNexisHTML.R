@@ -2,7 +2,7 @@
 fields <- list(section=c("section", "rubrique"),
                length=c("length", "longueur"),
                author=c("byline", "auteur"),
-               typepub=c("type", "publication-type", "type-publication"),
+               typepub=c("publication-type", "type-publication", "type"),
                subject=c("subject", "sujet"),
                language=c("language", "langue"),
                # The English translation is uncertain for these
@@ -116,7 +116,8 @@ readLexisNexisHTML <- FunctionGenerator(function(elem, language, id) {
                                  heading = if(length(heading) > 0 && !is.na(heading)) heading else character(0),
                                  id = id,
                                  origin = if(length(origin) > 0 && !is.na(origin)) origin else character(0),
-                                 language = lang)
+                                 language = lang,
+                                 description = if(!length(type) > 0 && is.na(type)) type else character(0))
         meta(doc, "intro") <- if(length(intro) > 0 && !is.na(intro)) intro else character(0)
         meta(doc, "section") <- if(length(section) > 0 && !is.na(section)) section else character(0)
         meta(doc, "subject") <- if(length(subject) > 0 && !all(is.na(subject))) subject else character(0)
