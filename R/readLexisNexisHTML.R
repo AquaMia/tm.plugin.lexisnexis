@@ -100,7 +100,7 @@ readLexisNexisHTML <- FunctionGenerator(function(elem, language, id) {
                 warning(sprintf("Could not parse document date \"%s\". You may need to change the system locale to match that of the corpus. See LC_TIME in ?Sys.setlocale.", strdate))
         }
 
-        content.nodes <- getNodeSet(tree, "//div[@class = 'c5']/p[@class = 'c9']/span[@class = 'c2']|//div[@class = 'c4']/p[@class = 'c8']/span[@class = 'c2']|//div[@class = 'c5']/p[@class = 'c8']/span[@class = 'c2']|//div[@class = 'c0']/p[@class = 'c16']/span[@class = 'c12']|//div[@class = 'c5']/p[@class = 'c10']/span[@class = 'c2']|//div[@class = 'c0']/p[@class = 'c15']/span[@class = 'c12']|//div[@class = 'c0']/p[@class = 'c20']/span[@class = 'c11']|//div[@class = 'c0']/p[@class = 'c12']/span[@class = 'c11']")
+        content.nodes <- getNodeSet(tree, "//div[@class = 'c5']/p[@class = 'c9']/span[@class = 'c2']|//div[@class = 'c4']/p[@class = 'c8']/span[@class = 'c2']|//div[@class = 'c5']/p[@class = 'c8']/span[@class = 'c2']|//div[@class = 'c0']/p[@class = 'c16']/span[@class = 'c12']|//div[@class = 'c5']/p[@class = 'c10']/span[@class = 'c2']|//div[@class = 'c0']/p[@class = 'c15']/span[@class = 'c12']|//div[@class = 'c0']/p[@class = 'c20']/span[@class = 'c11']|//div[@class = 'c4']/p[@class = 'c7']/span[@class = 'c2']")
         content <- gsub("\n", "", sapply(content.nodes, xmlValue), fixed=TRUE)
 
         id <- paste(gsub("[^[:alnum:]]", "", substr(origin, 1, 10)),
