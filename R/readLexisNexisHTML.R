@@ -54,7 +54,7 @@ readLexisNexisHTML <- FunctionGenerator(function(elem, language, id) {
         headingnodes <- getNodeSet(tree, "//div[@class = 'c4']/p[@class = 'c5']/span[@class = 'c6']|//div[@class = 'c5']/p[@class = 'c6']/span[@class = 'c7']|//div[@class = 'c5']/p[@class = 'c6']/span[@class = 'c10']|//div[@class = 'c0']/p[@class = 'c5']/span[@class = 'c14']|//div[@class = 'c0']/p[@class = 'c5']/span[@class = 'c18']")
         heading <- ifelse(length(headingnodes) > 0, xmlValue(headingnodes[[1]]), "")
 
-        nodes <- getNodeSet(tree, "//div[@class = 'c5']/p[@class = 'c6']|//div[@class = 'c5']/p[@class = 'c7']|//div[@class = 'c0']/p[@class = 'c5']")
+        nodes <- getNodeSet(tree, "//div[@class = 'c5']/p[@class = 'c6']|//div[@class = 'c5']/p[@class = 'c7']|//div[@class = 'c0']/p[@class = 'c5']|//div[@class = 'c4']/p[@class = 'c5']")
         names(nodes) <- sapply(nodes, function(x) xmlValue(x[[1]]))
 
 
